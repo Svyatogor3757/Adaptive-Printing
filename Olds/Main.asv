@@ -115,13 +115,13 @@ while i >= 1
 end
 tmp=[];
 % учет перемещений по подслою
-    for i=1:length(trackXY)
-        if i > 1
-            tmp = [tmp; trackXY(i,1) trackXY(i-1,2)];
-        end
-        tmp = [tmp; trackXY(i,1) trackXY(i,2)];
+for i=1:length(trackXY)
+    if i > 1
+        tmp = [tmp; trackXY(i,1) trackXY(i-1,2)];
     end
-    trackXYFull = tmp;
+    tmp = [tmp; trackXY(i,1) trackXY(i,2)];
+end
+trackXYFull = tmp;
 %% Визуалицация в примитивах
 sub_OffsetY = 0;
 hold on;
