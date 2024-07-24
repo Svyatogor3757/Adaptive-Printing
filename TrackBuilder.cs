@@ -73,42 +73,46 @@ namespace Adaptive_Printing_Base {
 
     public static class BaseOffset {
         public static int SplitHeight = 600;
-        public static int border = 200;
+        public static int Border = 200;
 
-        public static void PointToStart(Point[] trackDraw) {
+        public static void PointToStart(Point[] trackDraw, int? border = null) {
+            int Border = border != null ? (int)border : BaseOffset.Border;
             for (int i = 0; i < trackDraw.Length; i++) {
-                trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border);
+                trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border);
             }
         }
 
-        public static void PointToCenter(Size image, Point[] trackDraw) {
+        public static void PointToCenter(Size image, Point[] trackDraw, int? border = null) {
+            int Border = border != null ? (int)border : BaseOffset.Border;
             for (int i = 0; i < trackDraw.Length; i++) {
                 if (i + 1 < trackDraw.Length || trackDraw.Length <= 1) {
-                    trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + SplitHeight / 2);
+                    trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + SplitHeight / 2);
                 } else {
                     if (image.Height % SplitHeight > 0) {
-                        trackDraw[i - 1] = new Point(trackDraw[i - 1].X, trackDraw[i].Y + border + (image.Height % SplitHeight) / 2);
-                        trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + (image.Height % SplitHeight) / 2);
-                    } else trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + SplitHeight / 2);
+                        trackDraw[i - 1] = new Point(trackDraw[i - 1].X, trackDraw[i].Y + Border + (image.Height % SplitHeight) / 2);
+                        trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + (image.Height % SplitHeight) / 2);
+                    } else trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + SplitHeight / 2);
                 }
             }
         }
 
-        public static void PointToEnd(Size image, Point[] trackDraw) {
+        public static void PointToEnd(Size image, Point[] trackDraw, int? border = null) {
+            int Border = border != null ? (int)border : BaseOffset.Border;
             for (int i = 0; i < trackDraw.Length; i++) {
                 if (i + 1 < trackDraw.Length || trackDraw.Length <= 1) {
-                    trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + SplitHeight);
+                    trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + SplitHeight);
                 } else {
                     if (image.Height % SplitHeight > 0) {
-                        trackDraw[i - 1] = new Point(trackDraw[i - 1].X, trackDraw[i].Y + border + (image.Height % SplitHeight));
-                        trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + (image.Height % SplitHeight));
-                    } else trackDraw[i] = new Point(trackDraw[i].X + border, trackDraw[i].Y + border + SplitHeight);
+                        trackDraw[i - 1] = new Point(trackDraw[i - 1].X, trackDraw[i].Y + Border + (image.Height % SplitHeight));
+                        trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + (image.Height % SplitHeight));
+                    } else trackDraw[i] = new Point(trackDraw[i].X + Border, trackDraw[i].Y + Border + SplitHeight);
                 }
             }
         }
-        public static void RectangleToStart(Rectangle[] RectDraw) {
+        public static void RectangleToStart(Rectangle[] RectDraw, int? border = null) {
+            int Border = border != null ? (int)border : BaseOffset.Border;
             for (int i = 0; i < RectDraw.Length; i++)
-                RectDraw[i].Location = new Point(RectDraw[i].Location.X + border, RectDraw[i].Location.Y + border);
+                RectDraw[i].Location = new Point(RectDraw[i].Location.X + Border, RectDraw[i].Location.Y + Border);
         }
     }
 }

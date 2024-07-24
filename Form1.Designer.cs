@@ -337,22 +337,22 @@
             // button3
             // 
             button3.Dock = DockStyle.Right;
-            button3.Location = new Point(128, 1);
+            button3.Location = new Point(33, 1);
             button3.Name = "button3";
-            button3.Size = new Size(133, 23);
+            button3.Size = new Size(204, 23);
             button3.TabIndex = 7;
-            button3.Text = "Копировать в буфер";
+            button3.Text = "Копировать изображение в буфер";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button2
             // 
             button2.Dock = DockStyle.Right;
-            button2.Location = new Point(261, 1);
+            button2.Location = new Point(237, 1);
             button2.Name = "button2";
-            button2.Size = new Size(151, 23);
+            button2.Size = new Size(175, 23);
             button2.TabIndex = 8;
-            button2.Text = "Сохранить изображение";
+            button2.Text = "Сохранить изображение как";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 

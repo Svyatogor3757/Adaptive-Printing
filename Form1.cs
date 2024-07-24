@@ -52,7 +52,7 @@ namespace Adaptive_Printing {
                 border = num * 2;
             }
             BaseOffset.SplitHeight = SplitHeight;
-            BaseOffset.border = border;
+            BaseOffset.Border = border;
 
             Bitmap image = new Bitmap(path);
             List<Rectangle> rectangles = TrackBuilder.ProcessImage(image, SplitHeight);
